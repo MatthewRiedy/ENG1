@@ -16,16 +16,36 @@ public class DormRoomScreen implements Screen {
 
     private static final float SPRITE_WIDTH = 100;
     private static final float SPRITE_HEIGHT = 100;
-    public static final float SPEED = 120;
+    public static final float SPEED = 200;
+
+    //Space Button
+    public static final int SPACEBUTTON_WIDTH = 100;
+    public static final int SPACEBUTTON_HEIGHT = 50;
+    //Study Word
+    public static final int STUDYWORD_WIDTH = 100;
+    public static final int STUDYWORD_HEIGHT = 50;
+
+    //Sleep Word
+    public static final int SLEEPWORD_WIDTH = 100;
+    public static final int SLEEPWORD_HEIGHT = 50;
+
+
 
     eng1Game game;
 
     Texture DormRoomBackground;
+    Texture SpaceButton;
+    Texture StudyWord;
+    Texture SleepWord;
 
 
     public DormRoomScreen(eng1Game game){
         this.game = game;
         DormRoomBackground = new Texture("Dorm Room 2.png");
+
+        SpaceButton = new Texture("SpaceButton.png");
+        StudyWord = new Texture("StudyWord.png");
+        SleepWord = new Texture("SleepWord.png");
     }
 
     @Override
@@ -53,13 +73,37 @@ public class DormRoomScreen implements Screen {
         }
         if(Gdx.input.isKeyPressed(Input.Keys.LEFT)){
             SPITE_LOCATION_X = SPITE_LOCATION_X - SPEED * Gdx.graphics.getDeltaTime();
+            if(SPITE_LOCATION_X<-300){
+                SPITE_LOCATION_X=-300;
+            }
         }
         if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)){
             SPITE_LOCATION_X = SPITE_LOCATION_X + SPEED * Gdx.graphics.getDeltaTime();
+
+            if(SPITE_LOCATION_X>500-SPRITE_WIDTH){
+                SPITE_LOCATION_X=500-SPRITE_WIDTH;
+            }
         }
         game.batch.draw(DormRoomBackground,eng1Game.ORIGIN_X, eng1Game.ORIGIN_Y, eng1Game.WIDTH, eng1Game.HEIGHT);
 
         game.batch.draw(sprite, SPITE_LOCATION_X, SPITE_LOCATION_Y, SPRITE_WIDTH, SPRITE_HEIGHT);
+
+        //SLEEP
+        if(SPITE_LOCATION_X>-300 - SPRITE_WIDTH && SPITE_LOCATION_X <-100){
+            game.batch.draw(SpaceButton, -200, SPRITE_HEIGHT, SPACEBUTTON_WIDTH,SPACEBUTTON_HEIGHT);
+            game.batch.draw(SleepWord, -200, SPRITE_HEIGHT + SPACEBUTTON_HEIGHT, SLEEPWORD_WIDTH,SLEEPWORD_HEIGHT);
+            if(Gdx.input.isKeyPressed(Input.Keys.SPACE)){
+                //TODO
+            }
+        }
+        //STUDY
+        if(SPITE_LOCATION_X>200 && SPITE_LOCATION_X <300){
+            game.batch.draw(SpaceButton, 250, SPRITE_HEIGHT, SPACEBUTTON_WIDTH,SPACEBUTTON_HEIGHT);
+            game.batch.draw(StudyWord, 250, SPRITE_HEIGHT + SPACEBUTTON_HEIGHT, STUDYWORD_WIDTH,STUDYWORD_HEIGHT);
+            if(Gdx.input.isKeyPressed(Input.Keys.SPACE)){
+                //TODO
+            }
+        }
         game.batch.end();
     }
 
@@ -88,3 +132,4 @@ public class DormRoomScreen implements Screen {
 
     }
 }
+
