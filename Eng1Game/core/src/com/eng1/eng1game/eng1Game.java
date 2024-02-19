@@ -11,9 +11,6 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 
 public class eng1Game extends Game {
 
-	private Skin skin;
-	private Player player;
-
 	public static final int WIDTH = 1000;
 	public static final int HEIGHT = 900;
 
@@ -23,28 +20,17 @@ public class eng1Game extends Game {
 	public OrthographicCamera camera;
 	public SpriteBatch batch;
 
-	private Assets assets;
 	
 	@Override
 	public void create () {
 		camera = new OrthographicCamera(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		batch = new SpriteBatch();
 		this.setScreen(new StarterMenuScreen(this));
-
-		assets = new Assets();
-		assets.load();
-		assets.manager.finishLoading();
-
-		skin = new Skin();
-		skin.addRegions(assets.manager.get("player.pack", TextureAtlas.class));
-
-		player = new Player(skin.getRegion("walking"), assets.manager.get("audios/stepSound.wav", Sound.class));
 		}
 
 	@Override
 	public void render () {
         super.render();
-		player.update(batch);
 	}
 	
 	@Override
