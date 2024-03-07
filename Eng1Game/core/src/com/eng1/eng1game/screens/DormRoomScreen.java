@@ -71,7 +71,7 @@ public class DormRoomScreen implements Screen {
         game.batch.begin();
         if(Gdx.input.isKeyPressed(Input.Keys.DOWN)){
             this.dispose();
-            game.setScreen(new StudentAccomodationScreen(game));
+            game.setScreen(new outside(game));
         }
         if(Gdx.input.isKeyPressed(Input.Keys.LEFT)){
             SPITE_LOCATION_X = SPITE_LOCATION_X - SPEED * Gdx.graphics.getDeltaTime();

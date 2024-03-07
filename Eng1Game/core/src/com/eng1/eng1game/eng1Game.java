@@ -14,6 +14,7 @@ import com.eng1.eng1game.screens.DormRoomScreen;
 import com.eng1.eng1game.screens.GameOverScreen;
 import com.eng1.eng1game.screens.StarterMenuScreen;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.maps.tiled.TiledMap;
 
 public class eng1Game extends Game {
 
@@ -35,7 +36,7 @@ public class eng1Game extends Game {
 	public OrthographicCamera camera;
 	public SpriteBatch batch;
     Texture Blank;
-
+	Map outside;
 	public static AssetManager manager;
 
 	public void HUD(){
@@ -62,12 +63,11 @@ public class eng1Game extends Game {
 		manager = new AssetManager();
 		manager.load("audios/thresholdGameMusic.mp3", Music.class);
 		manager.finishLoading();
+		outside = new Map();
 		}
 
 	@Override
-	public void render () {
-        super.render();
-	}
+	public void render () {super.render();}
 	
 	public void update(){
 		timeCount += Gdx.graphics.getDeltaTime();
