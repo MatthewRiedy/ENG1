@@ -27,21 +27,13 @@ public class eng1Game extends Game {
 	public static final int DAY_X = -100;
 
 	private float timeCount;
-	private int worldTimer = 840;
+	private int worldTimer = 959;
 
 	public float health = 1;
 	public int study = 0;
 
 	public OrthographicCamera camera;
 	public SpriteBatch batch;
-	Texture Day1;
-	Texture Day2;
-	Texture Day3;
-	Texture Day4;
-	Texture Day5;
-	Texture Day6;
-	Texture Day7;
-
     Texture Blank;
 
 	public static AssetManager manager;
@@ -49,39 +41,15 @@ public class eng1Game extends Game {
 	public void HUD(){
 
 		update();
-		Day1 = new Texture("Day1.png");
-		Day2 = new Texture("Day2.png");
-		Day3 = new Texture("Day3.png");
-		Day4 = new Texture("Day4.png");
-		Day5 = new Texture("Day5.png");
-		Day6 = new Texture("Day6.png");
-		Day7 = new Texture("Day7.png");
 
+		Texture[] days = new Texture[] {new Texture("Day1.png"),new Texture("Day2.png"), new Texture("Day3.png"), new Texture("Day4.png"),
+				new Texture("Day5.png"), new Texture("Day6.png"), new Texture("Day7.png")};//array for the day counter
         Blank = new Texture("blank.png");
 
-        batch.draw(Blank, -500, -450, Gdx.graphics.getWidth() * health, 10);
+		batch.draw(Blank, -500, -450, Gdx.graphics.getWidth() * health, 10); // draws health bar
 
-		if(worldTimer<=840 && worldTimer >720){
-			batch.draw(Day1, DAY_X,DAY_Y);
-		}
-		if(worldTimer<=720 && worldTimer >600){
-			batch.draw(Day2, DAY_X,DAY_Y);
-		}
-		if(worldTimer<=600 && worldTimer >480){
-			batch.draw(Day3, DAY_X,DAY_Y);
-		}
-		if(worldTimer<=480 && worldTimer >360){
-			batch.draw(Day4, DAY_X,DAY_Y);
-		}
-		if(worldTimer<=360 && worldTimer >240){
-			batch.draw(Day5, DAY_X,DAY_Y);
-		}
-		if(worldTimer<=240 && worldTimer >120){
-			batch.draw(Day6, DAY_X,DAY_Y);
-		}
-		if(worldTimer<=120 && worldTimer >0){
-			batch.draw(Day7, DAY_X,DAY_Y);
-		}
+		batch.draw(days[7 - worldTimer/120], DAY_X, DAY_Y);//draws the day counter
+
 
 
 	}
