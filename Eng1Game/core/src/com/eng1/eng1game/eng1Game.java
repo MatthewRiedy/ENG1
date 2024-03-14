@@ -9,19 +9,12 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.eng1.eng1game.screens.DormRoomScreen;
 import com.eng1.eng1game.screens.GameOverScreen;
 import com.eng1.eng1game.screens.StarterMenuScreen;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.maps.tiled.TmxMapLoader;
-import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
-import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.maps.MapLayer;
-
 
 public class eng1Game extends Game {
 
@@ -36,15 +29,14 @@ public class eng1Game extends Game {
 	public static final int DAY_X = -100;
 
 	private float timeCount;
-	public int worldTimer = 120;
+	public int worldTimer = 128;
 
 	public float energy = 1;
 
-	public float exercise =0;
+	public int exercise =0;
 	public int study = 0;
-	private Player player;
-	TiledMap map;
 
+	public int eating = 0;
 
 
 
@@ -82,9 +74,6 @@ public class eng1Game extends Game {
 		manager.load("audios/thresholdGameMusic.mp3", Music.class);
 		manager.finishLoading();
 		outside = new Map();
-		TmxMapLoader loader = new TmxMapLoader();
-		map = loader.load("outside.tmx");
-		player = new Player(new Sprite(new Texture("sprite1.png")), (TiledMapTileLayer) outside.getLayers().get(1));
 		}
 
 	@Override
