@@ -81,9 +81,13 @@ public class CanteenScreen implements Screen {
             if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
                 if(game.energy < 0.75) {
                     game.energy += 0.25;
+                    game.worldTimer-=10;
+                    game.eating+=1;
                 }
                 else if(game.energy > 0.75) {
                     game.energy = 1;
+                    game.worldTimer-=10;
+                    game.eating+=1;
                 }
             }
         }
@@ -129,3 +133,4 @@ public class CanteenScreen implements Screen {
 
     }
 }
+
