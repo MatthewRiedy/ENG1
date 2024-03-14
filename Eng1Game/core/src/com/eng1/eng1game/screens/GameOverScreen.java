@@ -22,10 +22,10 @@ public class GameOverScreen implements Screen {
         this.game = game;
         DeathGameOver = new Texture("DeathGameover.jpg");
         ScoreGameOver = new Texture("ScoreGameover.jpg");
-        Texture AGrade = new Texture("grade-a.png");
-        Texture BGrade= new Texture("grade-b.png");
-        Texture CGrade = new Texture("grade-c.png");
-        Texture FGrade = new Texture("grade-f.png");
+        AGrade = new Texture("grade-a.png");
+        BGrade= new Texture("grade-b.png");
+        CGrade = new Texture("grade-c.png");
+        FGrade = new Texture("grade-f.png");
 
 
         //if(game.health <= 0) {
@@ -53,14 +53,14 @@ public class GameOverScreen implements Screen {
         if (game.energy <= 0) {
             game.batch.draw(DeathGameOver, eng1Game.ORIGIN_X, eng1Game.ORIGIN_Y, eng1Game.WIDTH, eng1Game.HEIGHT);
         } else {
-            if (game.study == 56 && game.exercise == 28) {
+            if (game.study == 56 && game.exercise == 28 && game.eating == 7) {
                 game.batch.draw(ScoreGameOver, eng1Game.ORIGIN_X, eng1Game.ORIGIN_Y, eng1Game.WIDTH, eng1Game.HEIGHT);
                 game.batch.draw(AGrade, 0, 0);
-            } else if (game.study > 56 || game.exercise > 28) {
+            } else if (game.study > 56 || game.exercise > 28 && game.eating > 5) {
                 game.batch.draw(ScoreGameOver, eng1Game.ORIGIN_X, eng1Game.ORIGIN_Y, eng1Game.WIDTH, eng1Game.HEIGHT);
                 game.batch.draw(BGrade, 0, 0);
             }
-         else if (game.study < 56 && game.study > 10 && game.exercise < 28 && game.exercise > 4) {
+         else if (game.study < 56 && game.study > 10 && game.exercise < 28 && game.exercise > 4 && game.eating <=2) {
             game.batch.draw(ScoreGameOver, eng1Game.ORIGIN_X, eng1Game.ORIGIN_Y, eng1Game.WIDTH, eng1Game.HEIGHT);
             game.batch.draw(CGrade, 0, 0);
         } else {
@@ -96,5 +96,4 @@ public class GameOverScreen implements Screen {
     public void dispose() {
 
     }
-}
 }
