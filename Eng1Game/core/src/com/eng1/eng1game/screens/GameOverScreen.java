@@ -13,11 +13,19 @@ public class GameOverScreen implements Screen {
     private Music music;
     Texture DeathGameOver;
     Texture ScoreGameOver;
+    Texture AGrade;
+    Texture BGrade;
+    Texture CGrade;
+    Texture FGrade;
 
     public GameOverScreen(eng1Game game){
         this.game = game;
         DeathGameOver = new Texture("DeathGameover.jpg");
         ScoreGameOver = new Texture("ScoreGameover.jpg");
+        Texture AGrade = new Texture("grade-a.png");
+        Texture BGrade= new Texture("grade-b.png");
+        Texture CGrade = new Texture("grade-c.png");
+        Texture FGrade = new Texture("grade-f.png");
 
 
         //if(game.health <= 0) {
@@ -42,13 +50,24 @@ public class GameOverScreen implements Screen {
 
         game.batch.begin();
 
-        if(game.energy <= 0) {
+        if (game.energy <= 0) {
             game.batch.draw(DeathGameOver, eng1Game.ORIGIN_X, eng1Game.ORIGIN_Y, eng1Game.WIDTH, eng1Game.HEIGHT);
-        }
-        else{
+        } else {
+            if (game.study == 56 && game.exercise == 28) {
+                game.batch.draw(ScoreGameOver, eng1Game.ORIGIN_X, eng1Game.ORIGIN_Y, eng1Game.WIDTH, eng1Game.HEIGHT);
+                game.batch.draw(AGrade, 0, 0);
+            } else if (game.study > 56 || game.exercise > 28) {
+                game.batch.draw(ScoreGameOver, eng1Game.ORIGIN_X, eng1Game.ORIGIN_Y, eng1Game.WIDTH, eng1Game.HEIGHT);
+                game.batch.draw(BGrade, 0, 0);
+            }
+         else if (game.study < 56 && game.study > 10 && game.exercise < 28 && game.exercise > 4) {
             game.batch.draw(ScoreGameOver, eng1Game.ORIGIN_X, eng1Game.ORIGIN_Y, eng1Game.WIDTH, eng1Game.HEIGHT);
-
+            game.batch.draw(CGrade, 0, 0);
+        } else {
+            game.batch.draw(ScoreGameOver, eng1Game.ORIGIN_X, eng1Game.ORIGIN_Y, eng1Game.WIDTH, eng1Game.HEIGHT);
+            game.batch.draw(FGrade, 0, 0);
         }
+    }
         game.batch.end();
 
     }
@@ -77,4 +96,5 @@ public class GameOverScreen implements Screen {
     public void dispose() {
 
     }
+}
 }
