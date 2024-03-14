@@ -1,5 +1,6 @@
 package com.eng1.eng1game.screens;
 
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
@@ -124,6 +125,7 @@ public class DormRoomScreen implements Screen {
             if(Gdx.input.isKeyPressed(Input.Keys.SPACE)){
                 game.study += 4;
                 game.energy -= 0.25;
+                game.worldTimer-=10;
             }
         }
         if(game.energy <= 0){
