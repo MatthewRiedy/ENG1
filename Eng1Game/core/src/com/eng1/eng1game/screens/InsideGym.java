@@ -79,6 +79,7 @@ public class InsideGym implements Screen {
             game.batch.draw(ExerciseButton, -150, 0 + SPACEBUTTON_HEIGHT, SPACEBUTTON_WIDTH, SPACEBUTTON_HEIGHT);
             if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
                 game.energy -= 0.25;
+                game.exercise+=4;
             }
         }
         if(SPRITE_LOCATION_X>-450 && SPRITE_LOCATION_X<-300) {
@@ -86,6 +87,7 @@ public class InsideGym implements Screen {
             game.batch.draw(ExerciseButton, -350, 0 + SPACEBUTTON_HEIGHT, SPACEBUTTON_WIDTH, SPACEBUTTON_HEIGHT);
             if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
                 game.energy -= 0.5;
+                game.exercise+=4;
             }
         }
         if(SPRITE_LOCATION_X<400 && SPRITE_LOCATION_X>250) {
@@ -126,4 +128,3 @@ public class InsideGym implements Screen {
 
     }
 }
-
