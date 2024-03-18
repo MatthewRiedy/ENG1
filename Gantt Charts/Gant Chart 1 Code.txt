@@ -1,4 +1,4 @@
-t@startgantt
+@startgantt
 [Requirements - Riad and Simon] requires 15 days
 [Architecture - Matthew and Adeola] requires 10 days
 [Method Selection and Planning - Cai, Ben and Adeola] requires 10 days
