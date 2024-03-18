@@ -18,8 +18,8 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 
 public class eng1Game extends Game {
 
-	public static final int WIDTH = 1000;
-	public static final int HEIGHT = 900;
+	public static final int WIDTH = 1024;
+	public static final int HEIGHT = 720;
 	public int i = 0;
 
 	public static final int ORIGIN_X = -500;
@@ -73,7 +73,6 @@ public class eng1Game extends Game {
 		manager = new AssetManager();
 		manager.load("audios/thresholdGameMusic.mp3", Music.class);
 		manager.finishLoading();
-		outside = new Map();
 		}
 
 	@Override

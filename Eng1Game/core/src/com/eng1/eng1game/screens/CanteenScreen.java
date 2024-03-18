@@ -42,7 +42,7 @@ public class CanteenScreen implements Screen {
         game.batch.draw(sprite, SPRITE_LOCATION_X, SPRITE_LOCATION_Y, SPRITE_WIDTH, SPRITE_HEIGHT);
         if(Gdx.input.isKeyPressed(Input.Keys.DOWN)){
             this.dispose();
-            game.setScreen(new outside(game));
+            game.setScreen(new Outside(game));
         }
 
         if(Gdx.input.isKeyPressed(Input.Keys.LEFT)){
@@ -72,7 +72,7 @@ public class CanteenScreen implements Screen {
         }
         if(Gdx.input.isKeyPressed(Input.Keys.S)){
             this.dispose();
-            game.setScreen(new outside(game));
+            game.setScreen(new Outside(game));
         }
 
         if(SPRITE_LOCATION_X>0 && SPRITE_LOCATION_X<150){
