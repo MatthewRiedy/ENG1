@@ -12,6 +12,16 @@ import com.eng1.eng1game.screens.StarterMenuScreen;
 
 public class eng1Game extends Game {
 
+	//Writes Study Score to screen
+	private String StudyScoreDisplay;
+	BitmapFont BitmapFontStudy;
+	//Writes Exercise Score to screen
+	private String ExerciseScoreDisplay;
+	BitmapFont BitmapFontExercise;
+	//Writes Eating Score to screen
+	private String EatingScoreDisplay;
+	BitmapFont BitmapFontEating;
+
 	//Height and Width of the screen
 	public static final int WIDTH = 1000;
 	public static final int HEIGHT = 900;
@@ -140,10 +150,30 @@ public class eng1Game extends Game {
 			manager = new AssetManager();
 			manager.load("audios/TimTaj - Aspire Background.mp3", Music.class);
 			manager.finishLoading();
+
+		StudyScoreDisplay = "Study: " + study;
+		BitmapFontStudy = new BitmapFont();
+
+		ExerciseScoreDisplay = "Exercise: " + exercise;
+		BitmapFontExercise = new BitmapFont();
+
+		EatingScoreDisplay = "Eating: " + eating;
+		BitmapFontEating = new BitmapFont();
 		}
 
 	@Override
-	public void render () {super.render();}
+	public void render () {
+		super.render();
+
+		batch.begin();
+		BitmapFontStudy.setColor(1.0f, 1.0f, 1.0f, 1.0f);
+		BitmapFontStudy.draw(batch, StudyScoreDisplay, 400, 100);
+		BitmapFontExercise.setColor(1.0f, 1.0f, 1.0f, 1.0f);
+		BitmapFontExercise.draw(batch, ExerciseScoreDisplay, 400, 50);
+		BitmapFontEating.setColor(1.0f, 1.0f, 1.0f, 1.0f);
+		BitmapFontEating.draw(batch, EatingScoreDisplay, 400, 0);
+		batch.end();
+			      }
 	
 	public void update(){
 		timeCount += Gdx.graphics.getDeltaTime(); //Increments timeCount until deltaTime is equal to 1 then sets value back to 0.
