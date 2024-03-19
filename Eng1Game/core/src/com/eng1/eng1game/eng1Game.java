@@ -71,7 +71,7 @@ public class eng1Game extends Game {
 		batch = new SpriteBatch();
 		this.setScreen(new StarterMenuScreen(this));
 		manager = new AssetManager();
-		manager.load("audios/thresholdGameMusic.mp3", Music.class);
+		manager.load("audios/TimTaj - Aspire Background.mp3", Music.class);
 		manager.finishLoading();
 		}
 
