@@ -11,9 +11,11 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.math.Vector2;
 
+import java.util.Arrays;
+
 public class Player extends Sprite implements InputProcessor {
     private Vector2 velocity = new Vector2();
-    private float speed = 60 * 2;
+    private float speed = 25 * 2;
     private TiledMapTileLayer collisionLayer;
     private String blockedKey = "blocked";
     private int targetX;
@@ -24,7 +26,12 @@ public class Player extends Sprite implements InputProcessor {
     TextureRegion[][] frames;
     int frame;
     private Sprite currentFrame;
-    public Player (TiledMapTileLayer collisionLayer){
+    eng1Game game;
+    Map map;
+
+    public Player (TiledMapTileLayer collisionLayer, eng1Game game, Map map){
+        this.game = game;
+        this.map = map;
         Texture spriteSheet = new Texture(Gdx.files.internal("Main Character.png"));
         frames = TextureRegion.split(spriteSheet,16,32);
         this.collisionLayer = collisionLayer;
@@ -32,6 +39,7 @@ public class Player extends Sprite implements InputProcessor {
         batch = new SpriteBatch();
         frame = 0;
         currentFrame = new Sprite(frames[0][4]);
+        this.draw();
     }
     public void draw() {
         update(Gdx.graphics.getDeltaTime());
@@ -55,6 +63,7 @@ public class Player extends Sprite implements InputProcessor {
         // move on X
         setX(getX() + velocity.x * delta);
         if (velocity.x < 0) { // left
+//            collideX = collisionLayer.getCell((int)(getX()/tileWidth), (int)((getY()+getHeight())/tileHeight)).getTile().getProperties().containsKey("blocked");
             collideX = collidesLeft();
         } else if (velocity.x > 0) { //right
             collideX = collidesRight();
@@ -89,28 +98,28 @@ public class Player extends Sprite implements InputProcessor {
     }
 
     public boolean collidesRight() {
-        for(float step = 0; step < getHeight(); step += collisionLayer.getTileHeight() / 2)
-            if(isCellBlocked(getX() + getWidth(), getY() + step))
+        for(float step = 0; step < 16; step += 8)
+            if(isCellBlocked(getX() + 2 * getWidth(), getY() + step))
                 return true;
         return false;
     }
 
     public boolean collidesLeft() {
-        for(float step = 0; step < getHeight(); step += collisionLayer.getTileHeight() / 2)
+        for(float step = 0; step < 16; step += 8)
             if(isCellBlocked(getX(), getY() + step))
                 return true;
         return false;
     }
 
     public boolean collidesTop() {
-        for(float step = 0; step < getWidth(); step += collisionLayer.getTileWidth() / 2)
+        for(float step = 0; step < 16; step += 8)
             if(isCellBlocked(getX() + step, getY() + getHeight()))
                 return true;
         return false;
     }
 
     public boolean collidesBottom() {
-        for(float step = 0; step < getWidth(); step += collisionLayer.getTileWidth() / 2)
+        for(float step = 0; step < 16; step += 8)
             if(isCellBlocked(getX() + step, getY()))
                 return true;
         return false;
@@ -159,6 +168,11 @@ public class Player extends Sprite implements InputProcessor {
                 currentFrame = new Sprite(walk(18));
                 velocity.y -= speed;
                 break;
+            case Input.Keys.SPACE:
+                String action = map.interacting();
+                if (action != null){
+                    interact(action);
+                }
         }
         return true;
     }
@@ -227,4 +241,12 @@ public class Player extends Sprite implements InputProcessor {
     public boolean scrolled(float amountX, float amountY) {
         return false;
     }
+    public void interact(String action){
+        for(Location location : Location.values())
+            if (action.equals(location.getName())){
+                map.dispose();
+                game.setScreen(new Map(game,action+".tmx"));
+        }
+    }
+
 }
