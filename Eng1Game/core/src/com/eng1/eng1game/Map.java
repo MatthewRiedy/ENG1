@@ -36,6 +36,9 @@ public class Map implements Screen {
         player = new Player((TiledMapTileLayer) tiledMap.getLayers().get("Walls"));
         player.setPosition(18 * player.getCollisionLayer().getTileWidth(), 27 * player.getCollisionLayer().getTileHeight());
         Gdx.input.setInputProcessor(player);
+        batch.begin();
+        player.draw();
+        batch.end();
     }
 
     /**
@@ -48,6 +51,7 @@ public class Map implements Screen {
         player.update(delta);
         batch.begin();
         player.draw();
+        game.HUD();
         batch.end();
     }
 

@@ -56,10 +56,10 @@ public class eng1Game extends Game {
 				new Texture("Day5.png"), new Texture("Day6.png"), new Texture("Day7.png")};//array for the day counter
         Blank = new Texture("blank.png");
 		TimeToSleep = new Texture("TimeToSleep.png");
-
+		batch.begin();
 		batch.draw(Blank, -500, -450, Gdx.graphics.getWidth() * energy, 10); // draws health bar
-
 		batch.draw(days[i], DAY_X, DAY_Y);//draws the day counter
+		batch.end();
 
 
 
