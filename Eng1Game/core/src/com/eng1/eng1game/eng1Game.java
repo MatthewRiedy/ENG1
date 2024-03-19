@@ -140,9 +140,6 @@ public class eng1Game extends Game {
 			manager = new AssetManager();
 			manager.load("audios/TimTaj - Aspire Background.mp3", Music.class);
 			manager.finishLoading();
-
-			outside = new Map(); //Loads map
-
 		}
 
 	@Override
