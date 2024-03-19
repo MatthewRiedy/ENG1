@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="64" height="45" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="1">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="64" height="45" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="22">
  <tileset firstgid="1" source="Room_Builder_16x16.tsx"/>
  <tileset firstgid="8285" source="8_Gym_16x16.tsx"/>
  <tileset firstgid="8813" source="3_Bathroom_16x16.tsx"/>
@@ -102,7 +102,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="3" name="Wall" width="64" height="45">
+ <layer id="3" name="Walls" width="64" height="45">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -396,4 +396,27 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup id="9" name="Boundaries">
+  <object id="1" x="1.03346" y="1.03346" width="1024.16" height="251.13"/>
+  <object id="2" x="559.1" y="251.13" width="197.39" height="70.275"/>
+  <object id="3" x="757.523" y="251.13" width="267.665" height="115.747"/>
+  <object id="4" x="753" y="320.667" width="5" height="94"/>
+  <object id="5" x="674" y="312.333" width="45" height="39"/>
+  <object id="6" x="608.667" y="310.667" width="46.3333" height="40.6667"/>
+  <object id="7" x="581.333" y="293.333" width="21.3333" height="32.3333"/>
+  <object id="8" x="726" y="293.333" width="20.6667" height="33.3333"/>
+  <object id="9" x="559.667" y="321.333" width="7" height="94"/>
+  <object id="10" x="912.667" y="367.333" width="111.667" height="102.333"/>
+  <object id="11" x="0.333333" y="252.333" width="191" height="211.667"/>
+  <object id="12" x="-0.333333" y="464" width="1025.33" height="256"/>
+  <object id="13" x="752.333" y="448" width="6.33333" height="16.3333"/>
+  <object id="14" x="559.667" y="448.333" width="7" height="16.6667"/>
+ </objectgroup>
+ <objectgroup id="10" name="Interactables">
+  <object id="17" x="500.667" y="398.333" width="36.3333" height="61"/>
+  <object id="18" x="490" y="314.333" width="44" height="57"/>
+  <object id="19" x="494.667" y="256.333" width="33.6667" height="49"/>
+  <object id="20" x="765" y="340" width="132.667" height="51.3333"/>
+  <object id="21" x="640" y="441.333" width="49" height="22.3333"/>
+ </objectgroup>
 </map>
