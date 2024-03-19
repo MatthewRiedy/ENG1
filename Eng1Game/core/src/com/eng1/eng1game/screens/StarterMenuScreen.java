@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.ScreenUtils;
-import com.eng1.eng1game.Map;
 import com.eng1.eng1game.eng1Game;
 
 public class StarterMenuScreen implements Screen {
@@ -24,12 +23,14 @@ public class StarterMenuScreen implements Screen {
     eng1Game game;
     Texture PlayButton;
     Texture ExitWordButton;
+
     Texture MenuBackground;
 
 
     public StarterMenuScreen(eng1Game game){
         this.game = game;
         PlayButton = new Texture("PlayButton2.png");
+        //ExitWordButton = new Texture("SettingWordButton.png");
         ExitWordButton = new Texture("ExitButton2.png");
         MenuBackground = new Texture("StarterMenuBackground.png");
 
@@ -52,17 +53,18 @@ public class StarterMenuScreen implements Screen {
         if(Gdx.input.getX() < x + PLAY_BUTTON_WIDTH && Gdx.input.getX() > x && Gdx.input.getY() < 350 + PLAY_BUTTON_HEIGHT && Gdx.input.getY() > 350) {
             if(Gdx.input.isTouched()){
                 this.dispose();
-                game.setScreen(new Map(game, "Dorm.tmx"));
+                game.setScreen(new DormRoomScreen(game));
             }
         }
         if(Gdx.input.getX() < x + EXIT_BUTTON_WIDTH && Gdx.input.getX() > x && Gdx.input.getY() < 450 + EXIT_BUTTON_HEIGHT && Gdx.input.getY() > 450) {
-                if(Gdx.input.isTouched()) {
-                    Gdx.app.exit();
-                }
+            if(Gdx.input.isTouched()){
+                Gdx.app.exit();
+            }
         }
 
         game.batch.draw(PlayButton, MENU_BUTTONS_X, PLAY_BUTTON_Y, PLAY_BUTTON_WIDTH, PLAY_BUTTON_HEIGHT);
         game.batch.draw(ExitWordButton, MENU_BUTTONS_X, EXIT_BUTTON_Y, EXIT_BUTTON_WIDTH, EXIT_BUTTON_HEIGHT);
+        //game.batch.draw(ExitWordButton, MENU_BUTTONS_X, EXIT_BUTTON_Y, EXIT_BUTTON_WIDTH, EXIT_BUTTON_HEIGHT);
         game.batch.end();
     }
 
