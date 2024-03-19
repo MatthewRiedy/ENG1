@@ -3,7 +3,6 @@ package com.eng1.eng1game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -11,7 +10,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.utils.Array;
 
 public class Player extends Sprite implements InputProcessor {
     private Vector2 velocity = new Vector2();
@@ -20,17 +18,31 @@ public class Player extends Sprite implements InputProcessor {
     private String blockedKey = "blocked";
     private int targetX;
     private int targetY;
-
-    public Player (Sprite sprite, TiledMapTileLayer collisionLayer){
-        super(sprite);
+    float stateTime = 0f;
+    SpriteBatch batch;
+    Animation animation;
+    TextureRegion[][] frames;
+    int frame;
+    private Sprite currentFrame;
+    public Player (TiledMapTileLayer collisionLayer){
+        Texture spriteSheet = new Texture(Gdx.files.internal("Main Character.png"));
+        frames = TextureRegion.split(spriteSheet,16,32);
         this.collisionLayer = collisionLayer;
         setSize(getWidth(),getHeight());
+        batch = new SpriteBatch();
+        frame = 0;
+        currentFrame = new Sprite(frames[0][4]);
     }
-    public void draw(SpriteBatch spriteBatch) {
+    public void draw() {
         update(Gdx.graphics.getDeltaTime());
-        super.draw(spriteBatch);
+        batch.begin();
+        batch.draw(currentFrame, getX(), getY());
+        batch.end();
     }
     public void update(float delta) {
+        //animation
+        stateTime += delta;
+        //currentFrame = animation.getKeyFrame(stateTime, true);
 
         //Collision.
         // This keeps track of the previous position.
@@ -132,30 +144,41 @@ public class Player extends Sprite implements InputProcessor {
     public boolean keyDown(int keycode) {
         switch (keycode) {
             case Input.Keys.W:
+                currentFrame = new Sprite(walk(6));
                 velocity.y += speed;
                 break;
             case Input.Keys.A:
+                currentFrame = new Sprite(walk(12));
                 velocity.x -= speed;
                 break;
             case Input.Keys.D:
+                currentFrame = new Sprite(walk(0));
                 velocity.x += speed;
                 break;
             case Input.Keys.S:
+                currentFrame = new Sprite(walk(18));
                 velocity.y -= speed;
                 break;
         }
         return true;
     }
-
+    private TextureRegion walk(int offset){
+        TextureRegion currentFrame = frames[2][frame+offset];
+        frame += 1;
+        frame = frame % 6;
+        return currentFrame;
+    }
     @Override
     public boolean keyUp(int keycode) {
         switch (keycode) {
             case Input.Keys.W:
             case Input.Keys.S:
+                frame = 0;
                 velocity.y = 0;
                 break;
             case Input.Keys.A:
             case Input.Keys.D:
+                frame = 0;
                 velocity.x = 0;
                 break;
             }
