@@ -52,7 +52,7 @@ public class DormRoomScreen implements Screen {
         StudyWord = new Texture("StudyWord.png");
         SleepWord = new Texture("SleepWord.png");
 
-        music = eng1Game.manager.get("audios/thresholdGameMusic.mp3", Music.class);
+        music = eng1Game.manager.get("audios/TimTaj - Aspire Background.mp3", Music.class);
         music.setLooping(true);
         music.play();
     }
