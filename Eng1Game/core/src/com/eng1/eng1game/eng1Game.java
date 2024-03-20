@@ -102,18 +102,15 @@ public class eng1Game extends Game {
 			manager = new AssetManager();
 			manager.load("audios/TimTaj - Aspire Background.mp3", Music.class);
 			manager.finishLoading();
-
-
-	}
-	public void updateScore(){
-		StudyScoreDisplay = "Study: " + study;
-		BitmapFontStudy = new BitmapFont();
-
-		ExerciseScoreDisplay = "Exercise: " + enjoy;
-		BitmapFontExercise = new BitmapFont();
-
-		EatingScoreDisplay = "Eating: " + eating;
 		BitmapFontEating = new BitmapFont();
+		BitmapFontExercise = new BitmapFont();
+		BitmapFontStudy = new BitmapFont();
+	}
+	public void updateScore(){// function to update the score displays
+		StudyScoreDisplay = "Study: " + study;
+		ExerciseScoreDisplay = "Exercise: " + enjoy;
+		EatingScoreDisplay = "Eating: " + eating;
+
 	}
 	@Override
 	public void render () {
