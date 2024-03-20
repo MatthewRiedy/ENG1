@@ -45,8 +45,8 @@ public class eng1Game extends Game {
 	public int study = 0;
 	public int eating = 0;
 
-	public int i = 0;
-	public int n = 0;
+	public int day = 0;
+	public int time = 0;
 
 	public static final int BUTTON_WIDTH = 100;
 	public static final int BUTTON_HEIGHT = 50;
@@ -78,64 +78,18 @@ public class eng1Game extends Game {
         	Blank = new Texture("blank.png"); //Health Bar Texture
 		
 		TimeToSleep = new Texture("TimeToSleep.png"); 
-
+		batch.begin();
 		batch.draw(Blank, -500, -450, Gdx.graphics.getWidth() * energy, 10); // draws health bar
+		batch.draw(days[day], DAY_X, DAY_Y);//draws the day counter
+		time = 16 - worldTimer/8;
 
-		batch.draw(days[i], DAY_X, DAY_Y);//draws the day counter
-        if(worldTimer >=120){
-            n=0;
-        }
-        else if(worldTimer >=112){
-            n=1;
-        }
-        else if(worldTimer >=104){
-            n=2;
-        }
-        else if(worldTimer >=96){
-            n=3;
-        }
-        else if(worldTimer >=88){
-            n=4;
-        }
-        else if(worldTimer >=80){
-            n=5;
-        }
-        else if(worldTimer >=72){
-            n=6;
-        }
-        else if(worldTimer >=64){
-            n=7;
-        }
-        else if(worldTimer >=56){
-            n=8;
-        }
-        else if(worldTimer >=48){
-            n=9;
-        }
-        else if(worldTimer >=40){
-            n=10;
-        }
-        else if(worldTimer >=32){
-            n=11;
-        }
-        else if(worldTimer >=24){
-            n=12;
-        }
-        else if(worldTimer >=16){
-            n=13;
-        }
-        else if(worldTimer >=8){
-            n=14;
-        }
-        else if(worldTimer >0){
-            n=15;
-        }
-        else if(worldTimer<0){
+        if(worldTimer<0){
             batch.draw(TimeToSleep, DAY_X-200, DAY_Y-100); //If worldTimer variable is less than 0 draws time to sleep image.
         }
-        if(worldTimer >0) {
-            batch.draw(hours[n], DAY_X - 200, DAY_Y - 100); //Only draws hours timer if worldTimer is greater than 0.
+        else{
+            batch.draw(hours[time], DAY_X - 200, DAY_Y - 100); //Only draws hours timer if worldTimer is greater than 0.
         }
+		batch.end();
 
 	}
 
