@@ -52,9 +52,6 @@ public class eng1Game extends Game {
 	public static final int BUTTON_HEIGHT = 50;
 	public static final float SPEED = 120;
 
-	//Boolean for Music which can be adjusted in the settings screen
-	public boolean Ticked = true;
-
 	public OrthographicCamera camera;
 	public SpriteBatch batch;
 
