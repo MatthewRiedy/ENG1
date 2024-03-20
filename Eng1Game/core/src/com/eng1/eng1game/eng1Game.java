@@ -47,19 +47,12 @@ public class eng1Game extends Game {
 
 	public int day = 0;
 	public int time = 0;
-
-	public static final int BUTTON_WIDTH = 100;
-	public static final int BUTTON_HEIGHT = 50;
-	public static final float SPEED = 120;
-
 	public OrthographicCamera camera;
 	public SpriteBatch batch;
 
 	//Textures
 	Texture Blank;
 	Texture TimeToSleep;
-	
-	Map outside;
 	
 	public static AssetManager manager;
 
@@ -88,7 +81,7 @@ public class eng1Game extends Game {
 		}
 		time = 16 - worldTimer/8; //Time Counter for hours
 
-        if(worldTimer<0){
+        if(time >= 16){
             batch.draw(TimeToSleep, DAY_X-200, DAY_Y-100); //If worldTimer variable is less than 0 draws time to sleep image.
         }
         else{
@@ -137,7 +130,7 @@ public class eng1Game extends Game {
 		if(timeCount >= 1){
 			worldTimer--; //If value is greater than 1 decrements worldTimer, this acts as the seconds counter for the game.
 			if(worldTimer <0) { //Player starts losing energy once worldTimer is less than 0 forcing the player to sleep starting the next day.
-				energy -= 0.1;
+				energy -= 0.1F;
 				if(energy <=0){//If player dies (health goes below 0) switches screen to teh Game Over Screen.
 					setScreen(new GameOverScreen(this));
 				}
