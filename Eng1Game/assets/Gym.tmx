@@ -413,10 +413,10 @@
   <object id="14" x="559.667" y="448.333" width="7" height="16.6667"/>
  </objectgroup>
  <objectgroup id="10" name="Interactables">
-  <object id="17" x="500.667" y="398.333" width="36.3333" height="61"/>
-  <object id="18" x="490" y="314.333" width="44" height="57"/>
-  <object id="19" x="494.667" y="256.333" width="33.6667" height="49"/>
+  <object id="17" name="enjoy" x="500.667" y="398.333" width="36.3333" height="61"/>
+  <object id="18" name="enjoy" x="490" y="314.333" width="44" height="57"/>
+  <object id="19" name="enjoy" x="495.667" y="256.333" width="33.6667" height="49"/>
   <object id="20" x="765" y="340" width="132.667" height="51.3333"/>
-  <object id="21" x="640" y="441.333" width="49" height="22.3333"/>
+  <object id="21" name="outside" x="640" y="441.333" width="49" height="22.3333"/>
  </objectgroup>
 </map>
