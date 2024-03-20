@@ -143,20 +143,25 @@ public class eng1Game extends Game {
 	public void dispose () {
 
 	}
+	//functions to perform actions
 	public void eat(){
 		eating += 1;
 		worldTimer -= 16;
+		energy -= 0.0125F;
 	}
 	public void enjoy(){
 		enjoy += 1;
 		worldTimer -= 16;
+		energy -= 0.0125F;
 	}
 	public void study(){
 		study += 1;
 		worldTimer -= 16;
+		energy -= 0.0125F;
 	}
 	public void sleep(){
 		day +=1;
-		worldTimer = 120;
+		worldTimer = 127;
+		energy =1;
 	}
 }
