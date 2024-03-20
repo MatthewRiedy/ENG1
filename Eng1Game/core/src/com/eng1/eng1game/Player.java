@@ -24,6 +24,8 @@ public class Player extends Sprite implements InputProcessor {
     // interaction variables
     eng1Game game;
     Map map;
+    private int offset;
+    private boolean moving = false;
 
     public Player (TiledMapTileLayer collisionLayer, eng1Game game, Map map){
         this.game = game;
@@ -34,12 +36,15 @@ public class Player extends Sprite implements InputProcessor {
         setSize(getWidth(),getHeight());
         batch = new SpriteBatch();
         frame = 0;
-        currentFrame = new Sprite(frames[0][4]);
+        currentFrame = new Sprite(frames[0][3]);
         this.draw();
     }
     public void draw() {
         update(Gdx.graphics.getDeltaTime());
         batch.begin();
+        if (moving){
+            currentFrame = new Sprite(walk(offset));
+        }
         batch.draw(currentFrame, getX(), getY());
         batch.end();
     }
@@ -125,6 +130,7 @@ public class Player extends Sprite implements InputProcessor {
     @Override
     public boolean keyDown(int keycode) {
         float speed = 25 * 2;
+        moving = true;
         switch (keycode) {
             case Input.Keys.W:
                 currentFrame = new Sprite(walk(6));
@@ -152,6 +158,7 @@ public class Player extends Sprite implements InputProcessor {
         return true;
     }
     private TextureRegion walk(int offset){
+        this.offset = offset;
         TextureRegion currentFrame = frames[2][frame+offset];
         frame += 1;
         frame = frame % 6;
@@ -159,6 +166,7 @@ public class Player extends Sprite implements InputProcessor {
     }
     @Override
     public boolean keyUp(int keycode) {
+        moving = false;
         switch (keycode) {
             case Input.Keys.W:
             case Input.Keys.S:
