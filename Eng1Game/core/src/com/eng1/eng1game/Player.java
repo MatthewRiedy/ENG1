@@ -13,9 +13,8 @@ import com.badlogic.gdx.math.Vector2;
 
 public class Player extends Sprite implements InputProcessor {
     //movement variables
-    private Vector2 velocity = new Vector2();
-    private float speed = 25 * 2;
-    private TiledMapTileLayer collisionLayer;
+    private final Vector2 velocity = new Vector2();
+    private final TiledMapTileLayer collisionLayer;
     //animation variables
     float stateTime = 0f;
     SpriteBatch batch;
@@ -125,6 +124,7 @@ public class Player extends Sprite implements InputProcessor {
 
     @Override
     public boolean keyDown(int keycode) {
+        float speed = 25 * 2;
         switch (keycode) {
             case Input.Keys.W:
                 currentFrame = new Sprite(walk(6));
@@ -181,20 +181,13 @@ public class Player extends Sprite implements InputProcessor {
 
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-        if (button == Input.Buttons.LEFT) {
-            // Some stuff
-            return true;
-        }
-        return false;
+        // Some stuff
+        return button == Input.Buttons.LEFT;
     }
 
     @Override
     public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-        if (button == Input.Buttons.LEFT) {
-
-            return true;
-        }
-        return false;
+        return button == Input.Buttons.LEFT;
     }
 
     @Override
