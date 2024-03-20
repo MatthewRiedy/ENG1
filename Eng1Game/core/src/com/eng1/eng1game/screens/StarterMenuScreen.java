@@ -47,16 +47,16 @@ public class StarterMenuScreen implements Screen {
         game.batch.setProjectionMatrix(game.camera.combined);
 
         game.batch.begin();
-        game.batch.draw(MenuBackground, -500, -450, eng1Game.WIDTH, eng1Game.HEIGHT);
+        game.batch.draw(MenuBackground, game.ORIGIN_X, game.ORIGIN_Y, eng1Game.WIDTH, eng1Game.HEIGHT);
 
         int x = 400;
-        if(Gdx.input.getX() < x + PLAY_BUTTON_WIDTH && Gdx.input.getX() > x && Gdx.input.getY() < 350 + PLAY_BUTTON_HEIGHT && Gdx.input.getY() > 350) {
+        if(Gdx.input.getX() < x + PLAY_BUTTON_WIDTH && Gdx.input.getX() > x && Gdx.input.getY() < 250 + PLAY_BUTTON_HEIGHT && Gdx.input.getY() > 250) {
             if(Gdx.input.isTouched()){
                 this.dispose();
                 game.setScreen(new Map(game, "Dorm.tmx"));
             }
         }
-        if(Gdx.input.getX() < x + EXIT_BUTTON_WIDTH && Gdx.input.getX() > x && Gdx.input.getY() < 450 + EXIT_BUTTON_HEIGHT && Gdx.input.getY() > 450) {
+        if(Gdx.input.getX() < x + EXIT_BUTTON_WIDTH && Gdx.input.getX() > x && Gdx.input.getY() < 350 + EXIT_BUTTON_HEIGHT && Gdx.input.getY() > 350) {
             if(Gdx.input.isTouched()){
                 Gdx.app.exit();
             }
