@@ -118,7 +118,7 @@ public class eng1Game extends Game {
 	@Override
 	public void render () {
 		super.render();
-		updateScore();d
+		updateScore();
 		batch.begin();
 		BitmapFontStudy.setColor(1.0f, 1.0f, 1.0f, 1.0f);
 		BitmapFontStudy.draw(batch, StudyScoreDisplay, 400, 100);
