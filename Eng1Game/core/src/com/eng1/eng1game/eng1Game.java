@@ -24,15 +24,15 @@ public class eng1Game extends Game {
 	BitmapFont BitmapFontEating;
 
 	//Height and Width of the screen
-	public static final int WIDTH = 1000;
-	public static final int HEIGHT = 900;
+	public static final int WIDTH = 1024;
+	public static final int HEIGHT = 720;
 
 	//Bottom origin for screens filling entire page
-	public static final int ORIGIN_X = -500;
-	public static final int ORIGIN_Y = -450;
+	public static final int ORIGIN_X = -512;
+	public static final int ORIGIN_Y = -360;
 
 	//Positioning of the day variable
-	public static final int DAY_Y = 350;
+	public static final int DAY_Y = 260;
 	public static final int DAY_X = -100;
 
 	//Time related values
@@ -56,7 +56,7 @@ public class eng1Game extends Game {
 	public SpriteBatch batch;
 
 	//Textures
-    	Texture Blank;
+	Texture Blank;
 	Texture TimeToSleep;
 	
 	Map outside;
@@ -79,7 +79,7 @@ public class eng1Game extends Game {
 		
 		TimeToSleep = new Texture("TimeToSleep.png"); 
 		batch.begin();
-		batch.draw(Blank, -500, -450, Gdx.graphics.getWidth() * energy, 10); // draws health bar
+		batch.draw(Blank, ORIGIN_X, ORIGIN_Y, Gdx.graphics.getWidth() * energy, 10); // draws health bar
 		batch.draw(days[day], DAY_X, DAY_Y);//draws the day counter
 		time = 16 - worldTimer/8;
 
