@@ -14,26 +14,28 @@ import com.badlogic.gdx.math.Vector2;
 import java.util.Arrays;
 
 public class Player extends Sprite implements InputProcessor {
+    //movement variables
     private Vector2 velocity = new Vector2();
     private float speed = 25 * 2;
     private TiledMapTileLayer collisionLayer;
     private String blockedKey = "blocked";
     private int targetX;
     private int targetY;
+    //animation variables
     float stateTime = 0f;
     SpriteBatch batch;
-    Animation animation;
     TextureRegion[][] frames;
     int frame;
     private Sprite currentFrame;
+    // interaction variables
     eng1Game game;
     Map map;
 
     public Player (TiledMapTileLayer collisionLayer, eng1Game game, Map map){
         this.game = game;
         this.map = map;
-        Texture spriteSheet = new Texture(Gdx.files.internal("Main Character.png"));
-        frames = TextureRegion.split(spriteSheet,16,32);
+        Texture spriteSheet = new Texture(Gdx.files.internal("Main Character.png"));//loads the textures for the player
+        frames = TextureRegion.split(spriteSheet,16,32);//splits the textures into an array
         this.collisionLayer = collisionLayer;
         setSize(getWidth(),getHeight());
         batch = new SpriteBatch();
