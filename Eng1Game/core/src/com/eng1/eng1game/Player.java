@@ -249,6 +249,15 @@ public class Player extends Sprite implements InputProcessor {
                 map.dispose();
                 game.setScreen(new Map(game,action+".tmx"));
         }
+        if (action.equals("eat")) {
+            game.eat();
+        } else if (action.equals("sleep")) {
+            game.sleep();
+        } else if (action.equals("enjoy")) {
+            game.enjoy();
+        }else if (action.equals("study")){
+            game.study();
+        }
     }
 
 }

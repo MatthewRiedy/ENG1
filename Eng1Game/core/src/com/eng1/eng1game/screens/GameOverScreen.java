@@ -43,14 +43,14 @@ public class GameOverScreen implements Screen {
         if (game.energy <= 0) {
             game.batch.draw(DeathGameOver, eng1Game.ORIGIN_X, eng1Game.ORIGIN_Y, eng1Game.WIDTH, eng1Game.HEIGHT);
         } else {
-            if (game.study == 56 && game.exercise == 28 && game.eating == 7) {
+            if (game.study == 56 && game.enjoy == 28 && game.eating == 7) {
                 game.batch.draw(ScoreGameOver, eng1Game.ORIGIN_X, eng1Game.ORIGIN_Y, eng1Game.WIDTH, eng1Game.HEIGHT);
                 game.batch.draw(AGrade, 0, 0);
-            } else if (game.study > 56 || game.exercise > 28 && game.eating > 5) {
+            } else if (game.study > 56 || game.enjoy > 28 && game.eating > 5) {
                 game.batch.draw(ScoreGameOver, eng1Game.ORIGIN_X, eng1Game.ORIGIN_Y, eng1Game.WIDTH, eng1Game.HEIGHT);
                 game.batch.draw(BGrade, 0, 0);
             }
-         else if (game.study < 56 && game.study > 10 && game.exercise < 28 && game.exercise > 4 && game.eating <=2) {
+         else if (game.study < 56 && game.study > 10 && game.enjoy < 28 && game.enjoy > 4 && game.eating <=2) {
             game.batch.draw(ScoreGameOver, eng1Game.ORIGIN_X, eng1Game.ORIGIN_Y, eng1Game.WIDTH, eng1Game.HEIGHT);
             game.batch.draw(CGrade, 0, 0);
         } else {

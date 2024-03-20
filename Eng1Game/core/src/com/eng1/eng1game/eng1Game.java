@@ -41,7 +41,7 @@ public class eng1Game extends Game {
 
 	//Game related variables for scoring
 	public float energy = 1;
-	public int exercise =0;
+	public int enjoy =0;
 	public int study = 0;
 	public int eating = 0;
 
@@ -106,7 +106,7 @@ public class eng1Game extends Game {
 		StudyScoreDisplay = "Study: " + study;
 		BitmapFontStudy = new BitmapFont();
 
-		ExerciseScoreDisplay = "Exercise: " + exercise;
+		ExerciseScoreDisplay = "Exercise: " + enjoy;
 		BitmapFontExercise = new BitmapFont();
 
 		EatingScoreDisplay = "Eating: " + eating;
@@ -140,9 +140,24 @@ public class eng1Game extends Game {
 			timeCount = 0;
 		}
 	}
-	
 	@Override
 	public void dispose () {
 
+	}
+	public void eat(){
+		eating += 1;
+		worldTimer -= 16;
+	}
+	public void enjoy(){
+		enjoy += 1;
+		worldTimer -= 16;
+	}
+	public void study(){
+		study += 1;
+		worldTimer -= 16;
+	}
+	public void sleep(){
+		day +=1;
+		worldTimer = 120;
 	}
 }
