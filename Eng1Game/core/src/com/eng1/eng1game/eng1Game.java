@@ -23,6 +23,8 @@ public class eng1Game extends Game {
 	private String EatingScoreDisplay;
 	BitmapFont BitmapFontEating;
 
+	Music music
+
 	//Height and Width of the screen
 	public static final int WIDTH = 1024;
 	public static final int HEIGHT = 720;
@@ -117,6 +119,11 @@ public class eng1Game extends Game {
 		super.render();
 		updateScore();
 		batch.begin();
+		//Plays Music
+		music = eng1Game.manager.get("audios/TimTaj - Aspire Background.mp3", Music.class);
+		music.setLooping(true);
+		music.play();
+		//Displays On screen score screen for Study, Exercise and Eating
 		BitmapFontStudy.setColor(1.0f, 1.0f, 1.0f, 1.0f);
 		BitmapFontStudy.draw(batch, StudyScoreDisplay, 400, 100);
 		BitmapFontExercise.setColor(1.0f, 1.0f, 1.0f, 1.0f);
