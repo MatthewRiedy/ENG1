@@ -260,10 +260,26 @@
   <object id="58" x="225.333" y="0.666667" width="46" height="204"/>
  </objectgroup>
  <objectgroup id="6" name="Interactables">
-  <object id="59" name="Canteen" x="543.333" y="304" width="48.6667" height="16.6667"/>
-  <object id="60" name="Dorm" x="226" y="206.667" width="42.6667" height="21.3333"/>
-  <object id="61" name="StudyBuilding" x="306" y="484.667" width="29.3333" height="53.3333"/>
-  <object id="62" name="Gym" x="880.667" y="462.667" width="31.3333" height="23.3333"/>
+  <object id="59" name="Canteen" x="543.333" y="304" width="48.6667" height="16.6667">
+   <properties>
+    <property name="spawn" value="32 29"/>
+   </properties>
+  </object>
+  <object id="60" name="Dorm" x="226" y="206.667" width="42.6667" height="21.3333">
+   <properties>
+    <property name="spawn" value="49 37"/>
+   </properties>
+  </object>
+  <object id="61" name="StudyBuilding" x="306" y="484.667" width="29.3333" height="53.3333">
+   <properties>
+    <property name="spawn" value="52 35"/>
+   </properties>
+  </object>
+  <object id="62" name="Gym" x="880.667" y="462.667" width="31.3333" height="23.3333">
+   <properties>
+    <property name="spawn" value="41 28"/>
+   </properties>
+  </object>
   <object id="63" x="830.667" y="110" width="32.6667" height="22"/>
  </objectgroup>
 </map>

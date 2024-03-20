@@ -21,8 +21,10 @@ public class Map implements Screen {
     SpriteBatch batch;
     MapObjects interactables;
     Texture spaceButton;
-    public Map(eng1Game game, String location){
+    int[] playerSpawn;
+    public Map(eng1Game game, String location, int[] playerSpawn){
         this.game = game;
+        this.playerSpawn = playerSpawn;
         camera = new OrthographicCamera();
         camera.setToOrtho(false, 64, 45);
         tiledMap = new TmxMapLoader().load(location);
@@ -39,7 +41,7 @@ public class Map implements Screen {
     @Override
     public void show() {
         player = new Player((TiledMapTileLayer) tiledMap.getLayers().get(2), game, this);
-        player.setPosition(35 * player.getCollisionLayer().getTileWidth(), 33 * player.getCollisionLayer().getTileHeight());
+        player.setPosition(playerSpawn[0] * player.getCollisionLayer().getTileWidth(), (45-playerSpawn[1]) * player.getCollisionLayer().getTileHeight());
         Gdx.input.setInputProcessor(player);
         batch.begin();
         player.draw();
@@ -53,7 +55,7 @@ public class Map implements Screen {
     public void render(float delta) {
         tiledMapRenderer.setView(camera);
         tiledMapRenderer.render();
-        String interact = interacting();
+        String[] interact = interacting();
         player.update(delta);
         player.draw();
         game.HUD();
@@ -101,7 +103,7 @@ public class Map implements Screen {
     public void dispose(){
         tiledMap.dispose();
     }
-    public String interacting(){
+    public String[] interacting(){
         //gets location of player
         float playerx = player.getX();
         float playery = player.getY();
@@ -116,7 +118,7 @@ public class Map implements Screen {
             float objectWidth = (float)object.getProperties().get("width");
             float objectHeight = (float)object.getProperties().get("height");
             if (((objectx < playerx && playerx < objectx + objectWidth) && (objecty < playery && playery < objecty+objectHeight) )){
-                return object.getName();
+                return new String[]{object.getName(), String.valueOf(object.getProperties().get("spawn"))};
             }
 
         }

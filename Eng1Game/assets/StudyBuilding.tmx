@@ -373,6 +373,10 @@
  </objectgroup>
  <objectgroup id="9" name="Interactables">
   <object id="1" name="study" x="480" y="318.667" width="134.667" height="89.3333"/>
-  <object id="2" name="outside" x="836" y="548" width="33.3333" height="40"/>
+  <object id="2" name="outside" x="836" y="548" width="33.3333" height="40">
+   <properties>
+    <property name="spawn" value="20 31"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

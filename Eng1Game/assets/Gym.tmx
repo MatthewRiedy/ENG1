@@ -417,6 +417,10 @@
   <object id="18" name="enjoy" x="490" y="314.333" width="44" height="57"/>
   <object id="19" name="enjoy" x="495.667" y="256.333" width="33.6667" height="49"/>
   <object id="20" x="765" y="340" width="132.667" height="51.3333"/>
-  <object id="21" name="outside" x="640" y="441.333" width="49" height="22.3333"/>
+  <object id="21" name="outside" x="640" y="441.333" width="49" height="22.3333">
+   <properties>
+    <property name="spawn" value="55 29"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

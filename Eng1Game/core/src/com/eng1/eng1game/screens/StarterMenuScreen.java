@@ -53,7 +53,7 @@ public class StarterMenuScreen implements Screen {
         if(Gdx.input.getX() < x + PLAY_BUTTON_WIDTH && Gdx.input.getX() > x && Gdx.input.getY() < 250 + PLAY_BUTTON_HEIGHT && Gdx.input.getY() > 250) {
             if(Gdx.input.isTouched()){
                 this.dispose();
-                game.setScreen(new Map(game, "Dorm.tmx"));
+                game.setScreen(new Map(game, "Dorm.tmx", new int[]{38, 12}));
             }
         }
         if(Gdx.input.getX() < x + EXIT_BUTTON_WIDTH && Gdx.input.getX() > x && Gdx.input.getY() < 350 + EXIT_BUTTON_HEIGHT && Gdx.input.getY() > 350) {

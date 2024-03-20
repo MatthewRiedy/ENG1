@@ -4,23 +4,18 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.math.Vector2;
 
-import java.util.Arrays;
 
 public class Player extends Sprite implements InputProcessor {
     //movement variables
     private Vector2 velocity = new Vector2();
     private float speed = 25 * 2;
     private TiledMapTileLayer collisionLayer;
-    private String blockedKey = "blocked";
-    private int targetX;
-    private int targetY;
     //animation variables
     float stateTime = 0f;
     SpriteBatch batch;
@@ -65,7 +60,6 @@ public class Player extends Sprite implements InputProcessor {
         // move on X
         setX(getX() + velocity.x * delta);
         if (velocity.x < 0) { // left
-//            collideX = collisionLayer.getCell((int)(getX()/tileWidth), (int)((getY()+getHeight())/tileHeight)).getTile().getProperties().containsKey("blocked");
             collideX = collidesLeft();
         } else if (velocity.x > 0) { //right
             collideX = collidesRight();
@@ -93,9 +87,9 @@ public class Player extends Sprite implements InputProcessor {
 
 
     }
-
     private boolean isCellBlocked(float x, float y) {
         TiledMapTileLayer.Cell cell = collisionLayer.getCell((int) (x / collisionLayer.getTileWidth()), (int) (y / collisionLayer.getTileHeight()));
+        String blockedKey = "blocked";
         return cell != null && cell.getTile() != null && cell.getTile().getProperties().containsKey(blockedKey);
     }
 
@@ -119,38 +113,16 @@ public class Player extends Sprite implements InputProcessor {
                 return true;
         return false;
     }
-
     public boolean collidesBottom() {
         for(float step = 0; step < 16; step += 8)
             if(isCellBlocked(getX() + step, getY()))
                 return true;
         return false;
     }
-
-
-    public Vector2 getVelocity() {
-        return velocity;
-    }
-
-    public void setVelocity(Vector2 velocity) {
-        this.velocity = velocity;
-    }
-
-    public float getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(float speed) {
-        this.speed = speed;
-    }
-
     public TiledMapTileLayer getCollisionLayer() {
         return collisionLayer;
     }
 
-    public void setCollisionLayer(TiledMapTileLayer collisionLayer) {
-        this.collisionLayer = collisionLayer;
-    }
     @Override
     public boolean keyDown(int keycode) {
         switch (keycode) {
@@ -171,10 +143,11 @@ public class Player extends Sprite implements InputProcessor {
                 velocity.y -= speed;
                 break;
             case Input.Keys.SPACE:
-                String action = map.interacting();
-                if (action != null){
+                String[] action= map.interacting();
+                if (action[0] != null){
                     interact(action);
                 }
+                break;
         }
         return true;
     }
@@ -243,20 +216,28 @@ public class Player extends Sprite implements InputProcessor {
     public boolean scrolled(float amountX, float amountY) {
         return false;
     }
-    public void interact(String action){
+    public void interact(String[] action){
         for(Location location : Location.values())
-            if (action.equals(location.getName())){
+            if (action[0].equals(location.getName())){
+                String spawn = action[1];
+                String[] pos = spawn.split(" ");
+                int[] position = new int[]{Integer.parseInt(pos[0]),Integer.parseInt(pos[1])};
                 map.dispose();
-                game.setScreen(new Map(game,action+".tmx"));
+                game.setScreen(new Map(game,action[0]+".tmx", position));
         }
-        if (action.equals("eat")) {
-            game.eat();
-        } else if (action.equals("sleep")) {
-            game.sleep();
-        } else if (action.equals("enjoy")) {
-            game.enjoy();
-        }else if (action.equals("study")){
-            game.study();
+        switch (action[0]) {
+            case "eat":
+                game.eat();
+                break;
+            case "sleep":
+                game.sleep();
+                break;
+            case "enjoy":
+                game.enjoy();
+                break;
+            case "study":
+                game.study();
+                break;
         }
     }
 

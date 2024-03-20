@@ -8676,6 +8676,10 @@
   <object id="24" name="eat" x="592" y="382.167" width="32" height="32.8333"/>
   <object id="25" name="study" x="503.667" y="159" width="32.3333" height="32"/>
   <object id="26" name="sleep" x="607.333" y="158.667" width="33.6667" height="49.6667"/>
-  <object id="27" name="outside" x="769.333" y="591" width="31.3333" height="33.3333"/>
+  <object id="27" name="outside" x="769.333" y="591" width="31.3333" height="33.3333">
+   <properties>
+    <property name="spawn" value="15 13"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
