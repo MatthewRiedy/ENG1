@@ -9,7 +9,7 @@ import com.eng1.eng1game.eng1Game;
 
 public class StarterMenuScreen implements Screen {
 
-
+    //Buttons widths and heights
     private static final int PLAY_BUTTON_WIDTH = 200;
     private static final int PLAY_BUTTON_HEIGHT = 100;
 
