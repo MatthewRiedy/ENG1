@@ -44,17 +44,19 @@ public class eng1Game extends Game {
 	public int enjoy =0;
 	public int study = 0;
 	public int eating = 0;
-
+	//time related variables
 	public int day = 0;
 	public int time = 0;
+	// rendering related variables
 	public OrthographicCamera camera;
 	public SpriteBatch batch;
+	public static AssetManager manager;
 
 	//Textures
 	Texture Blank;
 	Texture TimeToSleep;
 	
-	public static AssetManager manager;
+
 
 	public void HUD(){
 
@@ -70,14 +72,14 @@ public class eng1Game extends Game {
 		
         	Blank = new Texture("blank.png"); //Health Bar Texture
 		
-		TimeToSleep = new Texture("TimeToSleep.png"); 
+		TimeToSleep = new Texture("TimeToSleep.png"); //loading texture to warn player about the time
 		batch.begin();
 		batch.draw(Blank, ORIGIN_X, ORIGIN_Y, Gdx.graphics.getWidth() * energy, 10); // draws health bar
-		if (day < 7) {
+		if (day < 7) {//checks if day is within timeframe
 			batch.draw(days[day], DAY_X, DAY_Y);//draws the day counter
 		}
 		else{
-			setScreen(new GameOverScreen(this));
+			setScreen(new GameOverScreen(this));//ends the game
 		}
 		time = 16 - worldTimer/8; //Time Counter for hours
 
@@ -101,6 +103,9 @@ public class eng1Game extends Game {
 			manager.load("audios/TimTaj - Aspire Background.mp3", Music.class);
 			manager.finishLoading();
 
+
+	}
+	public void updateScore(){
 		StudyScoreDisplay = "Study: " + study;
 		BitmapFontStudy = new BitmapFont();
 
@@ -109,12 +114,11 @@ public class eng1Game extends Game {
 
 		EatingScoreDisplay = "Eating: " + eating;
 		BitmapFontEating = new BitmapFont();
-		}
-
+	}
 	@Override
 	public void render () {
 		super.render();
-
+		updateScore();d
 		batch.begin();
 		BitmapFontStudy.setColor(1.0f, 1.0f, 1.0f, 1.0f);
 		BitmapFontStudy.draw(batch, StudyScoreDisplay, 400, 100);
