@@ -26,16 +26,6 @@ public class GameOverScreen implements Screen {
         BGrade= new Texture("grade-b.png");
         CGrade = new Texture("grade-c.png");
         FGrade = new Texture("grade-f.png");
-
-
-        //if(game.health <= 0) {
-           // music = eng1Game.manager.get("audios/you-suck.mp3", Music.class);
-            //music.play();
-        //}
-        //else{
-            //music = eng1Game.manager.get("audios/trumpit-sound.mp3", Music.class);
-            //music.play();
-        //}
     }
 
     @Override
