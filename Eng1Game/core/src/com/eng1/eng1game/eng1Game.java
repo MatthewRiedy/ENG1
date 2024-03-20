@@ -81,7 +81,7 @@ public class eng1Game extends Game {
 		batch.begin();
 		batch.draw(Blank, ORIGIN_X, ORIGIN_Y, Gdx.graphics.getWidth() * energy, 10); // draws health bar
 		batch.draw(days[day], DAY_X, DAY_Y);//draws the day counter
-		time = 16 - worldTimer/8;
+		time = 16 - worldTimer/8; //Time Counter for hours
 
         if(worldTimer<0){
             batch.draw(TimeToSleep, DAY_X-200, DAY_Y-100); //If worldTimer variable is less than 0 draws time to sleep image.
