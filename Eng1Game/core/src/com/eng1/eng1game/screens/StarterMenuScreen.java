@@ -31,7 +31,6 @@ public class StarterMenuScreen implements Screen {
     public StarterMenuScreen(eng1Game game){
         this.game = game;
         PlayButton = new Texture("PlayButton2.png");
-        //ExitWordButton = new Texture("SettingWordButton.png");
         ExitWordButton = new Texture("ExitButton2.png");
         MenuBackground = new Texture("StarterMenuBackground.png");
 
@@ -65,7 +64,6 @@ public class StarterMenuScreen implements Screen {
 
         game.batch.draw(PlayButton, MENU_BUTTONS_X, PLAY_BUTTON_Y, PLAY_BUTTON_WIDTH, PLAY_BUTTON_HEIGHT);
         game.batch.draw(ExitWordButton, MENU_BUTTONS_X, EXIT_BUTTON_Y, EXIT_BUTTON_WIDTH, EXIT_BUTTON_HEIGHT);
-        //game.batch.draw(ExitWordButton, MENU_BUTTONS_X, EXIT_BUTTON_Y, EXIT_BUTTON_WIDTH, EXIT_BUTTON_HEIGHT);
         game.batch.end();
     }
 
