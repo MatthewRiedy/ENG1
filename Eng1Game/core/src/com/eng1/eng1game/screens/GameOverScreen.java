@@ -10,7 +10,6 @@ import com.eng1.eng1game.eng1Game;
 public class GameOverScreen implements Screen {
 
     eng1Game game;
-    private Music music;
     Texture DeathGameOver;
     Texture ScoreGameOver;
     //Image of Grades
