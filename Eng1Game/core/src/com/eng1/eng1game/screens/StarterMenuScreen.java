@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.ScreenUtils;
+import com.eng1.eng1game.Map;
 import com.eng1.eng1game.eng1Game;
 
 public class StarterMenuScreen implements Screen {
@@ -53,7 +54,7 @@ public class StarterMenuScreen implements Screen {
         if(Gdx.input.getX() < x + PLAY_BUTTON_WIDTH && Gdx.input.getX() > x && Gdx.input.getY() < 350 + PLAY_BUTTON_HEIGHT && Gdx.input.getY() > 350) {
             if(Gdx.input.isTouched()){
                 this.dispose();
-                game.setScreen(new DormRoomScreen(game));
+                game.setScreen(new Map(game, "Dorm.tmx"));
             }
         }
         if(Gdx.input.getX() < x + EXIT_BUTTON_WIDTH && Gdx.input.getX() > x && Gdx.input.getY() < 450 + EXIT_BUTTON_HEIGHT && Gdx.input.getY() > 450) {
