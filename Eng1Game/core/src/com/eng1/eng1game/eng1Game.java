@@ -80,7 +80,12 @@ public class eng1Game extends Game {
 		TimeToSleep = new Texture("TimeToSleep.png"); 
 		batch.begin();
 		batch.draw(Blank, ORIGIN_X, ORIGIN_Y, Gdx.graphics.getWidth() * energy, 10); // draws health bar
-		batch.draw(days[day], DAY_X, DAY_Y);//draws the day counter
+		if (day < 7) {
+			batch.draw(days[day], DAY_X, DAY_Y);//draws the day counter
+		}
+		else{
+			setScreen(new GameOverScreen(this));
+		}
 		time = 16 - worldTimer/8; //Time Counter for hours
 
         if(worldTimer<0){
