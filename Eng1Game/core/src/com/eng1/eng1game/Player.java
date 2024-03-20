@@ -150,8 +150,11 @@ public class Player extends Sprite implements InputProcessor {
                 break;
             case Input.Keys.SPACE:
                 String[] action= map.interacting();
-                if (action[0] != null){
+                if (action != null){
                     interact(action);
+                }
+                else {
+                    break;
                 }
                 break;
         }

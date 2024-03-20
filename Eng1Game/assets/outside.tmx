@@ -270,7 +270,7 @@
     <property name="spawn" value="49 37"/>
    </properties>
   </object>
-  <object id="61" name="StudyBuilding" x="306" y="484.667" width="29.3333" height="53.3333">
+  <object id="61" name="StudyBuilding" x="304" y="484.667" width="31.3333" height="53.3333">
    <properties>
     <property name="spawn" value="48 38"/>
    </properties>
