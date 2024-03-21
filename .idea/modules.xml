@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Eng1Game.iml" filepath="$PROJECT_DIR$/.idea/modules/Eng1Game.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/Eng1Game.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/Eng1Game.core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/Eng1Game.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/Eng1Game.core.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/Eng1Game.core.test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/Eng1Game.core.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/Eng1Game.desktop.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/Eng1Game.desktop.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/Eng1Game.desktop.main.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/Eng1Game.desktop.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/Eng1Game.desktop.test.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/Eng1Game.desktop.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ENG1.iml" filepath="$PROJECT_DIR$/.idea/ENG1.iml" />
     </modules>
   </component>
 </project>

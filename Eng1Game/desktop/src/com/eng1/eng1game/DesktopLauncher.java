@@ -8,10 +8,10 @@ import com.eng1.eng1game.eng1Game;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
-		config.setWindowedMode(eng1Game.WIDTH, eng1Game.HEIGHT);
+		config.setWindowedMode(1024,720);
+		config.setResizable(false);
 		config.setForegroundFPS(60);
 		config.setTitle("Eng1Game");
-		config.setResizable(false);
 		new Lwjgl3Application(new eng1Game(), config);
 	}
 }
