@@ -280,6 +280,5 @@
     <property name="spawn" value="41 28"/>
    </properties>
   </object>
-  <object id="63" x="830.667" y="110" width="32.6667" height="22"/>
  </objectgroup>
 </map>

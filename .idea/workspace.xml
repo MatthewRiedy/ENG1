@@ -5,57 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71381fa9-b76f-475f-a297-8687dc9d418a" name="Changes" comment="Putting code in main branch">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eng1Game/.gradle/8.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Eng1Game/.gradle/8.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eng1Game/.gradle/8.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Eng1Game/.gradle/8.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eng1Game/.gradle/8.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Eng1Game/.gradle/8.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eng1Game/.gradle/8.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Eng1Game/.gradle/8.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/.gradle/8.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Eng1Game/.gradle/8.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eng1Game/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Eng1Game/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/1-hour-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/10-hours-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/11-hours-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/12-hours-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/13-hours-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/14-hours-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/15-hours-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/16-hours-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/2-hours-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/3-hours-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/4-hours-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/5-hours-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/6-hours-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/7-hours-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/8-hours-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/9-hours-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/Day1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/Day2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/Day3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/Day4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/Day5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/Day6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/Day7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/core/build/libs/core-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Eng1Game/core/build/libs/core-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/core/build/tmp/compileJava/compileTransaction/stash-dir/BlankScreen.class.uniqueId5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/core/build/tmp/compileJava/compileTransaction/stash-dir/CanteenScreen.class.uniqueId2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/core/build/tmp/compileJava/compileTransaction/stash-dir/DormRoomScreen.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/core/build/tmp/compileJava/compileTransaction/stash-dir/InsideGym.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/core/build/tmp/compileJava/compileTransaction/stash-dir/Player.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/core/build/tmp/compileJava/compileTransaction/stash-dir/StarterMenuScreen.class.uniqueId4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/core/build/tmp/compileJava/compileTransaction/stash-dir/TileType.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/core/build/tmp/compileJava/compileTransaction/stash-dir/outside.class.uniqueId3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/core/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Eng1Game/core/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/desktop/build/resources/main/BackgroundMenu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/desktop/build/resources/main/BlankTickBox.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/desktop/build/resources/main/EatWord.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/desktop/build/resources/main/ExerciseWord.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/desktop/build/resources/main/MusicWord.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/desktop/build/resources/main/SettingWordButton.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/desktop/build/resources/main/Sprite1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/desktop/build/resources/main/TickedCheckBox.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/desktop/build/resources/main/WhiteBackground.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/desktop/build/resources/main/Whiteboard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eng1Game/desktop/build/resources/main/player.pack" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eng1Game/assets/outside.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/Eng1Game/assets/outside.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eng1Game/desktop/build/resources/main/outside.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/Eng1Game/desktop/build/resources/main/outside.tmx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,19 +79,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.eng1.eng1game" />
@@ -194,7 +151,7 @@
       <workItem from="1709805121940" duration="3921000" />
       <workItem from="1710409291364" duration="5119000" />
       <workItem from="1711013783231" duration="107000" />
-      <workItem from="1711013901422" duration="1442000" />
+      <workItem from="1711013901422" duration="1759000" />
     </task>
     <task id="LOCAL-00001" summary="Cleaned up some code and added a todo list">
       <option name="closed" value="true" />
@@ -244,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711014584936</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Putting code in main branch">
+      <option name="closed" value="true" />
+      <created>1711015390999</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711015390999</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
