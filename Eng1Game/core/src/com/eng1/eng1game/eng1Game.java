@@ -23,7 +23,7 @@ public class eng1Game extends Game {
 	private String EatingScoreDisplay;
 	BitmapFont BitmapFontEating;
 
-	Music music
+	Music music;
 
 	//Height and Width of the screen
 	public static final int WIDTH = 1024;
