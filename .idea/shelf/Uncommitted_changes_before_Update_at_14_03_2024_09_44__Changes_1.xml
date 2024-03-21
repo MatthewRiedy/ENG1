@@ -1,0 +1,54 @@
+<changelist name="Uncommitted_changes_before_Update_at_14_03_2024_09_44_[Changes]1" date="1710409515470" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_09_44_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 14/03/2024 09:44 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="Eng1Game/.gradle/8.5/fileHashes/resourceHashesCache.bin" />
+    <option name="AFTER_PATH" value="Eng1Game/.gradle/8.5/fileHashes/resourceHashesCache.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_09_44_[Changes]1/resourceHashesCache.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Eng1Game/.gradle/8.5/executionHistory/executionHistory.lock" />
+    <option name="AFTER_PATH" value="Eng1Game/.gradle/8.5/executionHistory/executionHistory.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_09_44_[Changes]1/executionHistory.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Eng1Game/core/build/classes/java/main/com/eng1/eng1game/eng1Game.class" />
+    <option name="AFTER_PATH" value="Eng1Game/core/build/classes/java/main/com/eng1/eng1game/eng1Game.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_09_44_[Changes]1/eng1Game.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Eng1Game/core/build/tmp/compileJava/previous-compilation-data.bin" />
+    <option name="AFTER_PATH" value="Eng1Game/core/build/tmp/compileJava/previous-compilation-data.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_09_44_[Changes]1/previous-compilation-data.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Eng1Game/.gradle/8.5/fileHashes/fileHashes.bin" />
+    <option name="AFTER_PATH" value="Eng1Game/.gradle/8.5/fileHashes/fileHashes.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_09_44_[Changes]1/fileHashes.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Eng1Game/core/build/tmp/compileJava/compileTransaction/stash-dir/eng1Game.class.uniqueId2" />
+    <option name="AFTER_PATH" value="Eng1Game/core/build/tmp/compileJava/compileTransaction/stash-dir/eng1Game.class.uniqueId2" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_09_44_[Changes]1/eng1Game.class.uniqueId2" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Eng1Game/.gradle/8.5/fileHashes/fileHashes.lock" />
+    <option name="AFTER_PATH" value="Eng1Game/.gradle/8.5/fileHashes/fileHashes.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_09_44_[Changes]1/fileHashes.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Eng1Game/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="AFTER_PATH" value="Eng1Game/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_09_44_[Changes]1/buildOutputCleanup.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Eng1Game/.gradle/8.5/executionHistory/executionHistory.bin" />
+    <option name="AFTER_PATH" value="Eng1Game/.gradle/8.5/executionHistory/executionHistory.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_09_44_[Changes]1/executionHistory.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Eng1Game/core/build/libs/core-1.0.jar" />
+    <option name="AFTER_PATH" value="Eng1Game/core/build/libs/core-1.0.jar" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_09_44_[Changes]1/core-1.0.jar" />
+  </binary>
+</changelist>
