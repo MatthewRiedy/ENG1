@@ -108,8 +108,6 @@ public class Map implements Screen {
         float playerx = player.getX();
         float playery = player.getY();
         //gets size of player
-        float playerWidth = player.getWidth();
-        float playerHeight = player.getHeight();
         for(MapObject object: tiledMap.getLayers().get("Interactables").getObjects()){
             //gets the location of the object
             float objectx = (float)object.getProperties().get("x");

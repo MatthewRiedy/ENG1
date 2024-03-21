@@ -23,6 +23,18 @@ public class eng1Game extends Game {
 	private String EatingScoreDisplay;
 	BitmapFont BitmapFontEating;
 
+	private String TimeLeftDisplay;
+
+	BitmapFont BitMapFontTime;
+
+	private String DayDisplay;
+
+	BitmapFont BitMapFontDay;
+
+	private String EnergyLeft;
+
+	BitmapFont BitMapFontEnergy;
+
 	Music music;
 
 	//Height and Width of the screen
@@ -33,21 +45,13 @@ public class eng1Game extends Game {
 	public static final int ORIGIN_X = -512;
 	public static final int ORIGIN_Y = -360;
 
-	//Positioning of the day variable
-	public static final int DAY_Y = 260;
-	public static final int DAY_X = -100;
-
-	//Time related values
-	private float timeCount;
-	public int worldTimer = 128;
-
 	//Game related variables for scoring
-	public float energy = 1;
+	public int energy = 10;
 	public int enjoy =0;
 	public int study = 0;
 	public int eating = 0;
 	//time related variables
-	public int day = 0;
+	public int day = 1;
 	public int time = 0;
 	// rendering related variables
 	public OrthographicCamera camera;
@@ -56,41 +60,18 @@ public class eng1Game extends Game {
 
 	//Textures
 	Texture Blank;
-	Texture TimeToSleep;
-	
+
+
 
 
 	public void HUD(){
+		Blank = new Texture("blank.png"); //Health Bar Texture
 
-		update();
-
-		Texture[] days = new Texture[] {new Texture("Day1.png"),new Texture("Day2.png"), new Texture("Day3.png"), new Texture("Day4.png"),
-				new Texture("Day5.png"), new Texture("Day6.png"), new Texture("Day7.png")};//array for the day counter
-		
-        	Texture[] hours = new Texture[] {new Texture("16-hours-left.png"),new Texture("15-hours-left.png"), new Texture("14-hours-left.png"), new Texture("13-hours-left.png"),
-                new Texture("12-hours-left.png"), new Texture("11-hours-left.png"), new Texture("10-hours-left.png"), new Texture("9-hours-left.png"),
-                new Texture("8-hours-left.png"),new Texture("7-hours-left.png"),new Texture("6-hours-left.png"),new Texture("5-hours-left.png"),new Texture("4-hours-left.png"),
-                new Texture("3-hours-left.png"),new Texture("2-hours-left.png"), new Texture("1-hour-left.png")};//array for the hour counter
-		
-        	Blank = new Texture("blank.png"); //Health Bar Texture
-		
-		TimeToSleep = new Texture("TimeToSleep.png"); //loading texture to warn player about the time
+		//TimeToSleep = new Texture("TimeToSleep.png"); //loading texture to warn player about the time
 		batch.begin();
-		batch.draw(Blank, ORIGIN_X, ORIGIN_Y, Gdx.graphics.getWidth() * energy, 10); // draws health bar
-		if (day < 7) {//checks if day is within timeframe
-			batch.draw(days[day], DAY_X, DAY_Y);//draws the day counter
-		}
-		else{
+		if (day > 7) {//checks if day is within timeframe
 			setScreen(new GameOverScreen(this));//ends the game
 		}
-		time = 16 - worldTimer/8; //Time Counter for hours
-
-        if(time >= 16){
-            batch.draw(TimeToSleep, DAY_X-200, DAY_Y-100); //If worldTimer variable is less than 0 draws time to sleep image.
-        }
-        else{
-            batch.draw(hours[time], DAY_X - 200, DAY_Y - 100); //Only draws hours timer if worldTimer is greater than 0.
-        }
 		batch.end();
 
 	}
@@ -101,23 +82,28 @@ public class eng1Game extends Game {
 		batch = new SpriteBatch();
 		this.setScreen(new StarterMenuScreen(this)); //Ensure the first screen is the starter menu screen
 		//plays music
-			manager = new AssetManager();
-			manager.load("audios/TimTaj - Aspire Background.mp3", Music.class);
-			manager.finishLoading();
+		manager = new AssetManager();
+		manager.load("audios/TimTaj - Aspire Background.mp3", Music.class);
+		manager.finishLoading();
 		BitmapFontEating = new BitmapFont();
 		BitmapFontExercise = new BitmapFont();
 		BitmapFontStudy = new BitmapFont();
+		BitMapFontDay = new BitmapFont();
+		BitMapFontTime = new BitmapFont();
+		BitMapFontEnergy = new BitmapFont();
 	}
-	public void updateScore(){// function to update the score displays
+	public void update(){// function to update the score displays
 		StudyScoreDisplay = "Study: " + study;
 		ExerciseScoreDisplay = "Exercise: " + enjoy;
 		EatingScoreDisplay = "Eating: " + eating;
-
+		TimeLeftDisplay = "Time Left: " + (16 - time);
+		DayDisplay = "Day: " + day;
+		EnergyLeft = "Energy: " + energy;
 	}
 	@Override
 	public void render () {
 		super.render();
-		updateScore();
+		update();
 		batch.begin();
 		//Plays Music
 		music = eng1Game.manager.get("audios/TimTaj - Aspire Background.mp3", Music.class);
@@ -130,22 +116,16 @@ public class eng1Game extends Game {
 		BitmapFontExercise.draw(batch, ExerciseScoreDisplay, 400, 50);
 		BitmapFontEating.setColor(1.0f, 1.0f, 1.0f, 1.0f);
 		BitmapFontEating.draw(batch, EatingScoreDisplay, 400, 0);
+		BitMapFontTime.setColor(1.0f,1.0f,1.0f,1.0f);
+		BitMapFontTime.draw(batch, TimeLeftDisplay, 400, 150);
+		BitMapFontDay.setColor(1.0f,1.0f,1.0f,1.0f);
+		BitMapFontDay.draw(batch, DayDisplay, 400, 200);
+		BitMapFontEnergy.setColor(1.0f,1.0f,1.0f,1.0f);
+		BitMapFontEnergy.draw(batch, EnergyLeft, 400, 250);
+
 		batch.end();
-			      }
-	
-	public void update(){
-		timeCount += Gdx.graphics.getDeltaTime(); //Increments timeCount until deltaTime is equal to 1 then sets value back to 0.
-		if(timeCount >= 1){
-			worldTimer--; //If value is greater than 1 decrements worldTimer, this acts as the seconds counter for the game.
-			if(worldTimer <0) { //Player starts losing energy once worldTimer is less than 0 forcing the player to sleep starting the next day.
-				energy -= 0.1F;
-				if(energy <=0){//If player dies (health goes below 0) switches screen to teh Game Over Screen.
-					setScreen(new GameOverScreen(this));
-				}
-			}
-			timeCount = 0;
-		}
 	}
+
 	@Override
 	public void dispose () {
 
@@ -153,22 +133,23 @@ public class eng1Game extends Game {
 	//functions to perform actions
 	public void eat(){
 		eating += 1;
-		worldTimer -= 16;
-		energy -= 0.0125F;
+		time += 2;
+		energy -= 1;
 	}
-	public void enjoy(){
+	public void enjoy() {
 		enjoy += 1;
-		worldTimer -= 16;
-		energy -= 0.0125F;
+		time += 2;
+		energy -= 1;
+
 	}
-	public void study(){
+	public void study() {
 		study += 1;
-		worldTimer -= 16;
-		energy -= 0.0125F;
+		time += 3;
+		energy -= 4;
 	}
 	public void sleep(){
 		day +=1;
-		worldTimer = 127;
-		energy =1;
+		time = 0;
+		energy =10;
 	}
 }

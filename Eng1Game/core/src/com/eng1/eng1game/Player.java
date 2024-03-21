@@ -57,7 +57,6 @@ public class Player extends Sprite implements InputProcessor {
         // This keeps track of the previous position.
         float oldX = getX();
         float oldY = getY();
-        float tileWidth = collisionLayer.getTileWidth(), tileHeight = collisionLayer.getTileHeight();
 
         boolean collideX = false, collideY = false;
 
@@ -181,8 +180,8 @@ public class Player extends Sprite implements InputProcessor {
                 frame = 0;
                 velocity.x = 0;
                 break;
-            }
-            return true;
+        }
+        return true;
     }
 
     @Override
@@ -228,19 +227,25 @@ public class Player extends Sprite implements InputProcessor {
                 int[] position = new int[]{Integer.parseInt(pos[0]),Integer.parseInt(pos[1])};
                 map.dispose();
                 game.setScreen(new Map(game,action[0]+".tmx", position));
-        }
+            }
         switch (action[0]) {
             case "eat":
-                game.eat();
+                if (game.time < 16 && game.energy >= 1) {
+                    game.eat();
+                }
                 break;
             case "sleep":
                 game.sleep();
                 break;
             case "enjoy":
-                game.enjoy();
+                if (game.time < 16 && game.energy >= 1) {
+                    game.enjoy();
+                }
                 break;
             case "study":
-                game.study();
+                if (game.time < 16 && game.energy >= 4) {
+                    game.study();
+                }
                 break;
         }
     }
