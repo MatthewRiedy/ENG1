@@ -28,17 +28,20 @@ public class Player extends Sprite implements InputProcessor {
     private boolean moving = false;
 
     public Player (TiledMapTileLayer collisionLayer, eng1Game game, Map map){
+        // saving other instances of classes to this instance of class
         this.game = game;
         this.map = map;
+
         Texture spriteSheet = new Texture(Gdx.files.internal("Main Character.png"));//loads the textures for the player
         frames = TextureRegion.split(spriteSheet,16,32);//splits the textures into an array
-        this.collisionLayer = collisionLayer;
+        this.collisionLayer = collisionLayer;//setting the collision layer for the player
         setSize(getWidth(),getHeight());
         batch = new SpriteBatch();
-        frame = 0;
+        frame = 0;//start of the animation frame loop
         currentFrame = new Sprite(frames[0][3]);
-        this.draw();
+        this.draw();//draws the character after it has been set up
     }
+    //funciton to render the player
     public void draw() {
         update(Gdx.graphics.getDeltaTime());
         batch.begin();
@@ -90,12 +93,13 @@ public class Player extends Sprite implements InputProcessor {
 
 
     }
+    //function to easily see if tiles that would be moved into have the custom property "blocked"
     private boolean isCellBlocked(float x, float y) {
         TiledMapTileLayer.Cell cell = collisionLayer.getCell((int) (x / collisionLayer.getTileWidth()), (int) (y / collisionLayer.getTileHeight()));
         String blockedKey = "blocked";
         return cell != null && cell.getTile() != null && cell.getTile().getProperties().containsKey(blockedKey);
     }
-
+//collision for different directions
     public boolean collidesRight() {
         for(float step = 0; step < 16; step += 8)
             if(isCellBlocked(getX() + 2 * getWidth(), getY() + step))
@@ -126,7 +130,7 @@ public class Player extends Sprite implements InputProcessor {
         return collisionLayer;
     }
 
-    @Override
+    @Override// takes user input and updates variables accordingly
     public boolean keyDown(int keycode) {
         float speed = 25 * 2;
         moving = true;
@@ -159,6 +163,7 @@ public class Player extends Sprite implements InputProcessor {
         }
         return true;
     }
+    // function to get the current sprite texture for the animation
     private TextureRegion walk(int offset){
         this.offset = offset;
         TextureRegion currentFrame = frames[2][frame+offset];
@@ -166,7 +171,7 @@ public class Player extends Sprite implements InputProcessor {
         frame = frame % 6;
         return currentFrame;
     }
-    @Override
+    @Override//resets variables when a key is no longer being pressed
     public boolean keyUp(int keycode) {
         moving = false;
         switch (keycode) {
@@ -219,15 +224,20 @@ public class Player extends Sprite implements InputProcessor {
     public boolean scrolled(float amountX, float amountY) {
         return false;
     }
+    //interaction with the object layer
     public void interact(String[] action){
-        for(Location location : Location.values())
-            if (action[0].equals(location.getName())){
+        for(Location location : Location.values())//for loop of all possible scenes
+            if (action[0].equals(location.getName())){//checks the if its going to a scene
+                //reformatting object data
                 String spawn = action[1];
                 String[] pos = spawn.split(" ");
+                //create new spawn position
                 int[] position = new int[]{Integer.parseInt(pos[0]),Integer.parseInt(pos[1])};
+                //end the previous map and render the next
                 map.dispose();
                 game.setScreen(new Map(game,action[0]+".tmx", position));
             }
+        //if the action isnt a location, checks which interaction it is, and performs that fucntion via the eng1Game instance
         switch (action[0]) {
             case "eat":
                 if (game.time < 16 && game.energy >= 1) {
